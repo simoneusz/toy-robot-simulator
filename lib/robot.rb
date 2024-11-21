@@ -1,3 +1,7 @@
+# frozen_string_literal: true
+
+# Robot class represents robot, that can move facing directions,left and right across the given board
+# Also able to create report of it's own state
 class Robot
   attr_accessor :postiion
 
@@ -11,11 +15,11 @@ class Robot
     @facing = nil
   end
 
-  def place(x, y, facing)
-    return unless @board.within_bounds?(x, y) && DIRECTIONS.include?(facing)
+  def place(x_position, y_position, facing)
+    return unless @board.within_bounds?(x_position, y_position) && DIRECTIONS.include?(facing)
 
-    @x = x
-    @y = y
+    @x = x_position
+    @y = y_position
     @facing = facing
     @placed = true
   end
@@ -34,7 +38,6 @@ class Robot
     when 'WEST'
       new_x -= 1
     end
-
     return unless @board.within_bounds?(new_x, new_y)
 
     @x = new_x
