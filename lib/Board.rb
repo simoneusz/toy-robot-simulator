@@ -5,4 +5,8 @@ class Board
     @width = width
     @height = height
   end
+
+  def within_bounds?(x, y)
+    x.between?(0, @width - 1) && y.between(0, @height)
+  end
 end
