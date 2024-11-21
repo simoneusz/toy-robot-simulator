@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require_relative('lib/Board')
-require_relative('lib/Robot')
+require_relative('lib/board')
+require_relative('lib/robot')
 
 # RobotController class that takes commands from user and make robot to move across the board
 class RobotController
